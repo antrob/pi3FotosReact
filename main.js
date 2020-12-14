@@ -36,7 +36,13 @@ function processaResposta_JSON( data )
         lista.push( eFoto(FotoLink, 
                             { href: url_foto_media,
                               src: url_foto_pequena,
-                              key: foto.id
+                              key: foto.id,
+                              onClick: clickHandler
+                              /*function clickHandler (e) {
+                                console.log( "Click ", this, e.target );
+                                e.preventDefault();  
+                              }
+                              */
                             })
                   );
 
@@ -47,7 +53,6 @@ function processaResposta_JSON( data )
                         , domContainerFotos);          
 
 }
-
 
 } 
 
@@ -62,4 +67,14 @@ ReactDOM.render(eFoto(FotoLink,
 function constroiURL_photo( farm_id, server_id, photo_id, secret, size )
 {  
   return  `https://farm${farm_id}.staticflickr.com/${server_id}/${photo_id}_${secret}_${size}.jpg`;
-}                     
+}    
+
+function clickHandler( e ) {
+  console.log( "Click ", this, e.target );
+
+  let imgClickada = e.target;
+  let imgDestaque = document.querySelector( "#destaque img");
+  imgDestaque.setAttribute( "src", imgClickada.parentNode.getAttribute("href"));
+
+  e.preventDefault();
+}
