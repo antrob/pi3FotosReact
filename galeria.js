@@ -1,8 +1,6 @@
 /* REACT Component Galeria */
 'use strict';
 
-import React, { Component } from 'react';
-
 class Galeria extends React.Component {
     constructor(props) {
         super(props);
@@ -14,8 +12,8 @@ class Galeria extends React.Component {
         for( let foto of props.fotos )
         {
             // Obtenção dos URLs da foto em tamanho pequeno e médio
-            url_foto_pequena = constroiURL_photo(foto.farm, foto.server, foto.id, foto.secret, "s");
-            url_foto_media = constroiURL_photo(foto.farm, foto.server, foto.id, foto.secret, "c");
+            url_foto_pequena = this.constroiURL_photo(foto.farm, foto.server, foto.id, foto.secret, "s");
+            url_foto_media = this.constroiURL_photo(foto.farm, foto.server, foto.id, foto.secret, "c");
 
             this.lista.push( <FotoLink href= {url_foto_media} 
                                 src={url_foto_pequena}
@@ -40,4 +38,3 @@ class Galeria extends React.Component {
     } 
 }
 
-export default Galeria;

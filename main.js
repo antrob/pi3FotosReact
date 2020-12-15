@@ -1,6 +1,5 @@
 'use strict';
 
-import {Galeria} from 'galeria.js';
 
 var url =  "https://api.flickr.com/services/rest/?method=flickr.interestingness.getList&api_key=4d24216fdb5dcfe237dfbab8c85f6f85&extras=geo&per_page=24&format=json&nojsoncallback=1";
 // var url = "https://api.flickr.com/services/rest/?method=flickr.interestingness.getList&api_key=" + API_KEY + "&extras=geo&per_page=24&format=json&nojsoncallback=1";
@@ -25,11 +24,6 @@ function processaResposta_JSON( data )
 
 }
 
-
-
-
-
-   
 
 function clickHandler( e ) {
   console.log( "Click ", this, e.target );

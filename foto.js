@@ -1,8 +1,6 @@
 /* REACT Component foto */
 'use strict';
 
-//import React, { Component } from 'react';
-
 
 class FotoLink extends React.Component {
   constructor(props) {
@@ -35,6 +33,4 @@ class FotoLink extends React.Component {
     );
   }
 }
-
-//export default FotoLink;
 
